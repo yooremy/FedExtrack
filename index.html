@@ -124,15 +124,17 @@
             <div class="bg-purple-50 border-b border-purple-100 p-6 sm:p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                 <div>
                     <div class="flex items-center space-x-3 mb-2">
-                        <span class="bg-fedex-orange text-white text-xs font-black uppercase px-2.5 py-1 rounded tracking-wide">IN TRANSIT</span>
-                        <span class="text-xs font-bold text-gray-500 uppercase">International Priority Air (Flight FX-082)</span>
+                        <span class="bg-fedex-orange text-white text-xs font-black uppercase px-2.5 py-1 rounded tracking-wide flex items-center gap-1.5">
+                            <i class="fa-solid fa-passport"></i> AWAITING CUSTOMS
+                        </span>
+                        <span class="text-xs font-bold text-gray-500 uppercase">Frankfurt Airport Air Cargo Hub (FRA)</span>
                     </div>
-                    <h1 class="text-2xl sm:text-3xl font-black text-fedex-purple">International Flight En Route to Germany</h1>
-                    <p class="text-sm text-gray-600 mt-1">Departed Los Angeles (LAX) Air Terminal — In air transit toward Frankfurt Airport Hub (FRA).</p>
+                    <h1 class="text-2xl sm:text-3xl font-black text-fedex-purple">Arrived in Germany — Awaiting Customs Clearance</h1>
+                    <p class="text-sm text-gray-600 mt-1">Package arrived via flight FX-082 at Frankfurt Air Cargo Hub and is currently queued for international customs processing by Zoll.</p>
                 </div>
                 <div class="bg-white p-4 rounded-lg border border-purple-200 shadow-sm w-full md:w-auto text-left md:text-right">
                     <div class="text-xs text-gray-500 font-bold uppercase">Estimated Delivery</div>
-                    <div class="text-xl sm:text-2xl font-black text-gray-800">Mon, Oct 05, 2026</div>
+                    <div class="text-xl sm:text-2xl font-black text-gray-800">Tue, Oct 06, 2026</div>
                     <div class="text-xs text-fedex-purple font-semibold">By 18:00 (End of Day)</div>
                 </div>
             </div>
@@ -171,7 +173,7 @@
                 <div class="relative">
                     <!-- Track Line -->
                     <div class="absolute top-1/2 left-0 right-0 h-1.5 bg-gray-200 -translate-y-1/2 z-0"></div>
-                    <div class="absolute top-1/2 left-0 w-2/4 h-1.5 bg-fedex-orange -translate-y-1/2 z-0 transition-all duration-500"></div>
+                    <div class="absolute top-1/2 left-0 w-3/4 h-1.5 bg-fedex-orange -translate-y-1/2 z-0 transition-all duration-500"></div>
 
                     <!-- Steps -->
                     <div class="relative z-10 flex justify-between items-center">
@@ -185,7 +187,7 @@
                             <span class="text-[10px] text-gray-400 hidden sm:block">Oct 02, 15:45</span>
                         </div>
 
-                        <!-- Step 2: Airport Transit Complete -->
+                        <!-- Step 2: Departed LAX -->
                         <div class="flex flex-col items-center">
                             <div class="w-8 h-8 rounded-full bg-fedex-purple text-white flex items-center justify-center text-sm font-bold shadow">
                                 <i class="fa-solid fa-check"></i>
@@ -194,22 +196,22 @@
                             <span class="text-[10px] text-gray-400 hidden sm:block">Oct 03, 02:15</span>
                         </div>
 
-                        <!-- Step 3: In Flight (ACTIVE) -->
+                        <!-- Step 3: Arrived in Germany -->
                         <div class="flex flex-col items-center">
-                            <div class="w-9 h-9 rounded-full bg-fedex-orange text-white flex items-center justify-center text-sm font-bold shadow-lg ring-4 ring-orange-100">
-                                <i class="fa-solid fa-plane"></i>
+                            <div class="w-8 h-8 rounded-full bg-fedex-purple text-white flex items-center justify-center text-sm font-bold shadow">
+                                <i class="fa-solid fa-check"></i>
                             </div>
-                            <span class="text-xs font-bold text-fedex-orange mt-2">In Flight</span>
-                            <span class="text-[10px] text-fedex-orange font-semibold hidden sm:block">Flight FX-082</span>
+                            <span class="text-xs font-bold text-fedex-purple mt-2">Arrived FRA</span>
+                            <span class="text-[10px] text-gray-400 hidden sm:block">Oct 04, 18:20</span>
                         </div>
 
-                        <!-- Step 4: Customs Clearance -->
+                        <!-- Step 4: Customs Clearance (ACTIVE) -->
                         <div class="flex flex-col items-center">
-                            <div class="w-8 h-8 rounded-full bg-gray-200 text-gray-400 flex items-center justify-center text-sm font-bold">
-                                4
+                            <div class="w-9 h-9 rounded-full bg-fedex-orange text-white flex items-center justify-center text-sm font-bold shadow-lg ring-4 ring-orange-100">
+                                <i class="fa-solid fa-passport"></i>
                             </div>
-                            <span class="text-xs font-bold text-gray-400 mt-2">Customs (FRA)</span>
-                            <span class="text-[10px] text-gray-400 hidden sm:block">Pending</span>
+                            <span class="text-xs font-bold text-fedex-orange mt-2">Customs</span>
+                            <span class="text-[10px] text-fedex-orange font-semibold hidden sm:block">In Clearance</span>
                         </div>
 
                         <!-- Step 5: Delivered -->
@@ -228,8 +230,8 @@
             <!-- ROUTE MAP SECTION -->
             <div class="border-t border-gray-200">
                 <div class="p-4 bg-gray-100 flex justify-between items-center text-xs font-bold text-gray-600 uppercase">
-                    <span><i class="fa-solid fa-plane-up me-1 text-fedex-purple"></i> Intercontinental Trans-Atlantic Flight Corridor</span>
-                    <span class="text-fedex-orange font-bold"><i class="fa-solid fa-wifi text-[10px] animate-pulse me-1"></i> Flight Radar Stream: FX-082</span>
+                    <span><i class="fa-solid fa-building-columns me-1 text-fedex-purple"></i> Frankfurt Air Hub Customs Clearance Zone (FRA)</span>
+                    <span class="text-fedex-orange font-bold"><i class="fa-solid fa-shield-halved text-[10px] animate-pulse me-1"></i> Status: Processing by German Customs (Zoll)</span>
                 </div>
                 <div id="map"></div>
             </div>
@@ -242,21 +244,35 @@
 
                 <div class="space-y-6 relative before:absolute before:inset-0 before:left-3.5 before:w-0.5 before:bg-gray-200">
                     
-                    <!-- Event 1: Flight Departure -->
+                    <!-- Event 1: Arrived in Germany / Customs -->
                     <div class="relative flex items-start space-x-4">
                         <div class="w-7 h-7 rounded-full bg-fedex-orange text-white flex items-center justify-center text-xs font-bold z-10 shadow">
-                            <i class="fa-solid fa-plane-departure"></i>
+                            <i class="fa-solid fa-passport"></i>
                         </div>
                         <div class="flex-grow bg-orange-50 p-4 rounded-lg border border-orange-200">
                             <div class="flex flex-col sm:flex-row justify-between sm:items-center">
-                                <span class="font-bold text-gray-900 text-sm">International Flight Departed</span>
-                                <span class="text-xs font-bold text-fedex-orange">Oct 03, 2026 - 02:15 PST</span>
+                                <span class="font-bold text-gray-900 text-sm">Arrived in Germany &mdash; Awaiting Customs Clearance</span>
+                                <span class="text-xs font-bold text-fedex-orange">Oct 04, 2026 - 18:20 CET</span>
                             </div>
-                            <p class="text-xs text-gray-600 mt-1">LOS ANGELES, CA — FedEx Express Flight FX-082 departed LAX airport en route to Frankfurt Airport Hub (FRA).</p>
+                            <p class="text-xs text-gray-600 mt-1">FRANKFURT, GERMANY — Arrived at FedEx Frankfurt Air Hub (FRA). Package transferred to international customs inspection unit. Awaiting regulatory clearance by German Customs Authority (Zoll).</p>
                         </div>
                     </div>
 
-                    <!-- Event 2: Arrived at Airport Cargo Terminal -->
+                    <!-- Event 2: Flight Departure -->
+                    <div class="relative flex items-start space-x-4">
+                        <div class="w-7 h-7 rounded-full bg-fedex-purple text-white flex items-center justify-center text-xs font-bold z-10">
+                            <i class="fa-solid fa-plane-departure"></i>
+                        </div>
+                        <div class="flex-grow bg-white p-4 rounded-lg border border-gray-200">
+                            <div class="flex flex-col sm:flex-row justify-between sm:items-center">
+                                <span class="font-bold text-gray-900 text-sm">International Flight Departed</span>
+                                <span class="text-xs text-gray-500">Oct 03, 2026 - 02:15 PST</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">LOS ANGELES, CA — FedEx Express Flight FX-082 departed LAX airport en route to Frankfurt Airport Hub (FRA).</p>
+                        </div>
+                    </div>
+
+                    <!-- Event 3: Arrived at Airport Cargo Terminal -->
                     <div class="relative flex items-start space-x-4">
                         <div class="w-7 h-7 rounded-full bg-fedex-purple text-white flex items-center justify-center text-xs font-bold z-10">
                             <i class="fa-solid fa-warehouse"></i>
@@ -267,20 +283,6 @@
                                 <span class="text-xs text-gray-500">Oct 02, 2026 - 21:40 PST</span>
                             </div>
                             <p class="text-xs text-gray-500 mt-1">LOS ANGELES, CA — Scanned into LAX air cargo handling facility. Cleared export inspection and loaded into aircraft container ULD-8820.</p>
-                        </div>
-                    </div>
-
-                    <!-- Event 3: Left Facility -->
-                    <div class="relative flex items-start space-x-4">
-                        <div class="w-7 h-7 rounded-full bg-fedex-purple text-white flex items-center justify-center text-xs font-bold z-10">
-                            <i class="fa-solid fa-truck"></i>
-                        </div>
-                        <div class="flex-grow bg-white p-4 rounded-lg border border-gray-200">
-                            <div class="flex flex-col sm:flex-row justify-between sm:items-center">
-                                <span class="font-bold text-gray-900 text-sm">Left FedEx Facility</span>
-                                <span class="text-xs text-gray-500">Oct 02, 2026 - 18:30 PST</span>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">LOS ANGELES, CA — Dispatch Vehicle FX-4022 departed sorting hub heading to LAX Airport.</p>
                         </div>
                     </div>
 
@@ -380,7 +382,7 @@
                 <button onclick="closeModal('notifyModal')" class="text-white hover:text-gray-300"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
             <div class="p-6 space-y-4">
-                <p class="text-xs text-gray-600">Receive SMS or Email notifications as this shipment moves through air cargo to Fehrbellin, Germany.</p>
+                <p class="text-xs text-gray-600">Receive SMS or Email notifications as this shipment moves through German Customs to Fehrbellin.</p>
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Email Address</label>
                     <input type="email" placeholder="name@example.com" class="w-full p-2.5 border border-gray-300 rounded text-xs focus:border-fedex-purple focus:outline-none">
@@ -452,7 +454,8 @@
         });
 
         function initMap() {
-            map = L.map('map').setView([45.0000, -35.0000], 3);
+            // Center map on Germany / Frankfurt Airport Hub
+            map = L.map('map').setView([51.2000, 10.5000], 6);
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 18,
@@ -460,42 +463,45 @@
             }).addTo(map);
 
             const laxAirport = [33.9425, -118.4081]; 
-            const midFlight = [52.0000, -38.0000];   
-            const fraAirport = [50.0379, 8.5622];     
-            const finalDest = [52.8122, 12.7712];    
+            const fraAirport = [50.0379, 8.5622];     // Frankfurt Airport Hub
+            const finalDest = [52.8122, 12.7712];    // Fehrbellin, Germany
 
-            L.polyline([laxAirport, [45.0, -90.0], midFlight, [52.0, -10.0], fraAirport], {
+            // Completed Flight Arc (Faded)
+            L.polyline([laxAirport, fraAirport], {
+                color: '#4D148C',
+                weight: 2,
+                dashArray: '4, 4',
+                opacity: 0.5
+            }).addTo(map);
+
+            // Pending Ground/Regional Route to Fehrbellin
+            L.polyline([fraAirport, finalDest], {
                 color: '#FF6600',
                 weight: 3,
                 dashArray: '6, 6'
             }).addTo(map);
 
-            L.polyline([fraAirport, finalDest], {
-                color: '#9CA3AF',
-                weight: 2,
-                dashArray: '4, 4'
-            }).addTo(map);
-
             const originIcon = L.divIcon({
-                html: '<div style="background-color:#4D148C; color:white; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-center; border:2px solid white; font-size:12px;"><i class="fa-solid fa-plane-departure" style="margin:auto"></i></div>',
+                html: '<div style="background-color:#4D148C; color:white; width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:2px solid white; font-size:11px;"><i class="fa-solid fa-plane-departure"></i></div>',
                 className: ''
             });
 
-            const planeIcon = L.divIcon({
-                html: '<div style="background-color:#FF6600; color:white; width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-center; border:3px solid white; font-size:14px; box-shadow:0 2px 6px rgba(0,0,0,0.3);"><i class="fa-solid fa-plane" style="margin:auto"></i></div>',
+            const customsIcon = L.divIcon({
+                html: '<div style="background-color:#FF6600; color:white; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:3px solid white; font-size:15px; box-shadow:0 2px 6px rgba(0,0,0,0.3);"><i class="fa-solid fa-passport"></i></div>',
                 className: ''
             });
 
             const destIcon = L.divIcon({
-                html: '<div style="background-color:#6B7280; color:white; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-center; border:2px solid white; font-size:12px;"><i class="fa-solid fa-flag-checkered" style="margin:auto"></i></div>',
+                html: '<div style="background-color:#6B7280; color:white; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:2px solid white; font-size:12px;"><i class="fa-solid fa-flag-checkered"></i></div>',
                 className: ''
             });
 
             L.marker(laxAirport, {icon: originIcon}).addTo(map)
                 .bindPopup("<b>LAX Airport Terminal</b><br>Los Angeles, USA<br><i>Departed: Oct 03, 02:15 PST</i>");
 
-            L.marker(midFlight, {icon: planeIcon}).addTo(map)
-                .bindPopup("<b>ACTIVE FLIGHT: FX-082</b><br>Altitude: 36,000 FT<br>Heading: Frankfurt Airport (FRA)<br><i>Status: On Time</i>");
+            L.marker(fraAirport, {icon: customsIcon}).addTo(map)
+                .bindPopup("<b>Frankfurt Airport Cargo Hub (FRA)</b><br>Customs Inspection Station<br><i>Status: Awaiting Zoll Clearance</i>")
+                .openPopup();
 
             L.marker(finalDest, {icon: destIcon}).addTo(map)
                 .bindPopup("<b>Final Destination</b><br>16833 Fehrbellin, Germany");
