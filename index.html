@@ -119,12 +119,12 @@
                 <div>
                     <div class="flex items-center space-x-3 mb-2">
                         <span class="bg-fedex-orange text-white text-xs font-black uppercase px-2.5 py-1 rounded tracking-wide flex items-center gap-1.5">
-                            <i class="fa-solid fa-box"></i> SHIPMENT CREATED
+                            <i class="fa-solid fa-plane-departure"></i> IN TRANSIT
                         </span>
                         <span id="displayTrackingNo" class="text-xs font-bold text-gray-500 uppercase font-mono"></span>
                     </div>
-                    <h1 class="text-2xl sm:text-3xl font-black text-fedex-purple">Shipment Information Sent to FedEx</h1>
-                    <p class="text-sm text-gray-600 mt-1">Electronic shipping information received. Package is prepared and awaiting courier pickup at origin facility.</p>
+                    <h1 class="text-2xl sm:text-3xl font-black text-fedex-purple">In Transit — International Flight Departed</h1>
+                    <p class="text-sm text-gray-600 mt-1">Package departed origin air hub on FedEx Express Flight FX-074. En route to London Heathrow Airport (LHR) transit hub.</p>
                 </div>
                 <div class="bg-white p-4 rounded-lg border border-purple-200 shadow-sm w-full md:w-auto text-left md:text-right">
                     <div class="text-xs text-gray-500 font-bold uppercase">Estimated Delivery</div>
@@ -137,13 +137,13 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 sm:p-8 border-b border-gray-100 bg-white">
                 <div class="flex space-x-4 items-start">
                     <div class="w-10 h-10 rounded-full bg-purple-100 text-fedex-purple flex items-center justify-center font-bold text-lg flex-shrink-0">
-                        <i class="fa-solid fa-box"></i>
+                        <i class="fa-solid fa-plane-departure"></i>
                     </div>
                     <div>
                         <div class="text-xs font-bold text-gray-400 uppercase tracking-wider">From / Origin</div>
                         <div class="font-bold text-gray-900 text-base">Los Angeles, CA, USA (LAX)</div>
-                        <div class="text-xs text-gray-500">FedEx Origin Station</div>
-                        <div class="text-xs text-gray-400 mt-1">Status: Pending Origin Pickup</div>
+                        <div class="text-xs text-gray-500">FedEx Air Express Hub</div>
+                        <div class="text-xs text-gray-400 mt-1">Departed: Oct 11, 2026 - 21:10 PST</div>
                     </div>
                 </div>
 
@@ -167,36 +167,36 @@
                 <div class="relative">
                     <!-- Track Line -->
                     <div class="absolute top-1/2 left-0 right-0 h-1.5 bg-gray-200 -translate-y-1/2 z-0"></div>
-                    <div class="absolute top-1/2 left-0 w-1/12 h-1.5 bg-fedex-orange -translate-y-1/2 z-0 transition-all duration-500"></div>
+                    <div class="absolute top-1/2 left-0 w-1/2 h-1.5 bg-fedex-orange -translate-y-1/2 z-0 transition-all duration-500"></div>
 
                     <!-- Steps -->
                     <div class="relative z-10 flex justify-between items-center">
                         
-                        <!-- Step 1: Label Created (ACTIVE) -->
+                        <!-- Step 1: Label Created -->
                         <div class="flex flex-col items-center">
-                            <div class="w-9 h-9 rounded-full bg-fedex-orange text-white flex items-center justify-center text-sm font-bold shadow-lg ring-4 ring-orange-100 animate-pulse">
-                                <i class="fa-solid fa-file-invoice"></i>
+                            <div class="w-8 h-8 rounded-full bg-fedex-purple text-white flex items-center justify-center text-sm font-bold shadow">
+                                <i class="fa-solid fa-check"></i>
                             </div>
-                            <span class="text-xs font-bold text-fedex-orange mt-2">Label Created</span>
-                            <span class="text-[10px] text-fedex-orange font-semibold hidden sm:block">Oct 11, 09:15</span>
+                            <span class="text-xs font-bold text-fedex-purple mt-2">Label Created</span>
+                            <span class="text-[10px] text-gray-400 hidden sm:block">Oct 11, 09:15</span>
                         </div>
 
                         <!-- Step 2: Picked Up -->
                         <div class="flex flex-col items-center">
-                            <div class="w-8 h-8 rounded-full bg-gray-200 text-gray-400 flex items-center justify-center text-sm font-bold">
-                                2
+                            <div class="w-8 h-8 rounded-full bg-fedex-purple text-white flex items-center justify-center text-sm font-bold shadow">
+                                <i class="fa-solid fa-check"></i>
                             </div>
-                            <span class="text-xs font-bold text-gray-400 mt-2">Picked Up</span>
-                            <span class="text-[10px] text-gray-400 hidden sm:block">Pending</span>
+                            <span class="text-xs font-bold text-fedex-purple mt-2">Picked Up</span>
+                            <span class="text-[10px] text-gray-400 hidden sm:block">Oct 11, 16:30</span>
                         </div>
 
-                        <!-- Step 3: In Transit -->
+                        <!-- Step 3: In Transit (ACTIVE) -->
                         <div class="flex flex-col items-center">
-                            <div class="w-8 h-8 rounded-full bg-gray-200 text-gray-400 flex items-center justify-center text-sm font-bold">
-                                3
+                            <div class="w-9 h-9 rounded-full bg-fedex-orange text-white flex items-center justify-center text-sm font-bold shadow-lg ring-4 ring-orange-100 animate-pulse">
+                                <i class="fa-solid fa-plane-departure"></i>
                             </div>
-                            <span class="text-xs font-bold text-gray-400 mt-2">In Transit</span>
-                            <span class="text-[10px] text-gray-400 hidden sm:block">Hub Transfer</span>
+                            <span class="text-xs font-bold text-fedex-orange mt-2">In Transit</span>
+                            <span class="text-[10px] text-fedex-orange font-semibold hidden sm:block">Flight FX-074</span>
                         </div>
 
                         <!-- Step 4: Out for Delivery -->
@@ -224,8 +224,8 @@
             <!-- ROUTE MAP SECTION -->
             <div class="border-t border-gray-200">
                 <div class="p-4 bg-gray-100 flex justify-between items-center text-xs font-bold text-gray-600 uppercase">
-                    <span><i class="fa-solid fa-location-dot me-1 text-fedex-purple"></i> Origin Facility &mdash; Los Angeles, CA</span>
-                    <span class="text-fedex-orange font-bold"><i class="fa-solid fa-clock text-[10px] me-1"></i> Status: Ready for Carrier Pickup</span>
+                    <span><i class="fa-solid fa-plane text-fedex-purple me-1"></i> Transatlantic Express Flight Path (LAX &rarr; LHR)</span>
+                    <span class="text-fedex-orange font-bold"><i class="fa-solid fa-arrows-spin text-[10px] animate-spin me-1"></i> Status: In Flight</span>
                 </div>
                 <div id="map"></div>
             </div>
@@ -238,9 +238,37 @@
 
                 <div class="space-y-6 relative before:absolute before:inset-0 before:left-3.5 before:w-0.5 before:bg-gray-200">
                     
+                    <!-- Event 3: International Flight Departed -->
+                    <div class="relative flex items-start space-x-4">
+                        <div class="w-7 h-7 rounded-full bg-fedex-orange text-white flex items-center justify-center text-xs font-bold z-10 shadow">
+                            <i class="fa-solid fa-plane-departure"></i>
+                        </div>
+                        <div class="flex-grow bg-orange-50 p-4 rounded-lg border border-orange-200">
+                            <div class="flex flex-col sm:flex-row justify-between sm:items-center">
+                                <span class="font-bold text-gray-900 text-sm">International Flight Departed</span>
+                                <span class="text-xs font-bold text-fedex-orange">Oct 11, 2026 - 21:10 PST</span>
+                            </div>
+                            <p class="text-xs text-gray-600 mt-1">LOS ANGELES, CA — FedEx Express Flight FX-074 departed LAX origin air hub en route to London Heathrow Gateway (LHR).</p>
+                        </div>
+                    </div>
+
+                    <!-- Event 2: Picked up and Arrived at Facility -->
+                    <div class="relative flex items-start space-x-4">
+                        <div class="w-7 h-7 rounded-full bg-fedex-purple text-white flex items-center justify-center text-xs font-bold z-10">
+                            <i class="fa-solid fa-truck-ramp-box"></i>
+                        </div>
+                        <div class="flex-grow bg-white p-4 rounded-lg border border-gray-200">
+                            <div class="flex flex-col sm:flex-row justify-between sm:items-center">
+                                <span class="font-bold text-gray-900 text-sm">Shipment Picked Up &amp; Arrived at Origin Facility</span>
+                                <span class="text-xs text-gray-500">Oct 11, 2026 - 16:30 PST</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">LOS ANGELES, CA — Package picked up by courier and processed into LAX air cargo hub container ULD-4921.</p>
+                        </div>
+                    </div>
+
                     <!-- Event 1: Shipment Information Sent -->
                     <div class="relative flex items-start space-x-4">
-                        <div class="w-7 h-7 rounded-full bg-fedex-purple text-white flex items-center justify-center text-xs font-bold z-10 shadow">
+                        <div class="w-7 h-7 rounded-full bg-fedex-purple text-white flex items-center justify-center text-xs font-bold z-10">
                             <i class="fa-solid fa-file-invoice"></i>
                         </div>
                         <div class="flex-grow bg-white p-4 rounded-lg border border-gray-200">
@@ -404,27 +432,41 @@
         });
 
         function initMap() {
-            // Center map on origin location (Los Angeles)
-            map = L.map('map').setView([33.9425, -118.4081], 4);
+            // View Atlantic route center
+            map = L.map('map').setView([42.0000, -55.0000], 3);
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 18,
                 attribution: '&copy; OpenStreetMap contributors | FedEx Express'
             }).addTo(map);
 
-            const laxAirport = [33.9425, -118.4081]; // Origin
+            const laxAirport = [33.9425, -118.4081]; // Origin LAX
+            const midAtlantic = [44.0000, -42.0000];  // Current In-flight position
+            const lhrAirport = [51.4700, -0.4543];   // London Heathrow Gateway
             const bristolDest = [51.4463, -2.6033];  // Destination (Bristol, UK)
 
-            // Dashed route line illustrating planned journey to Bristol
-            L.polyline([laxAirport, bristolDest], {
+            // Flight Arc
+            L.polyline([laxAirport, lhrAirport], {
+                color: '#FF6600',
+                weight: 3,
+                dashArray: '6, 6'
+            }).addTo(map);
+
+            // Ground connection to Bristol
+            L.polyline([lhrAirport, bristolDest], {
                 color: '#4D148C',
                 weight: 2,
-                dashArray: '6, 6',
-                opacity: 0.6
+                dashArray: '4, 4',
+                opacity: 0.5
             }).addTo(map);
 
             const originIcon = L.divIcon({
-                html: '<div style="background-color:#FF6600; color:white; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:3px solid white; font-size:13px; box-shadow:0 2px 6px rgba(0,0,0,0.3);"><i class="fa-solid fa-box"></i></div>',
+                html: '<div style="background-color:#4D148C; color:white; width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:2px solid white; font-size:11px;"><i class="fa-solid fa-check"></i></div>',
+                className: ''
+            });
+
+            const planeIcon = L.divIcon({
+                html: '<div style="background-color:#FF6600; color:white; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:3px solid white; font-size:15px; box-shadow:0 2px 6px rgba(0,0,0,0.3);"><i class="fa-solid fa-plane"></i></div>',
                 className: ''
             });
 
@@ -434,7 +476,10 @@
             });
 
             L.marker(laxAirport, {icon: originIcon}).addTo(map)
-                .bindPopup("<b>LAX Origin Station</b><br>Los Angeles, USA<br><i>Status: Shipment Information Received</i>")
+                .bindPopup("<b>LAX Origin Station</b><br>Departed: Oct 11, 21:10 PST");
+
+            L.marker(midAtlantic, {icon: planeIcon}).addTo(map)
+                .bindPopup("<b>FedEx Express Flight FX-074</b><br>In Flight Transatlantic Transit<br><i>Heading: LHR Airport, London</i>")
                 .openPopup();
 
             L.marker(bristolDest, {icon: destIcon}).addTo(map)
