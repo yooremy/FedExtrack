@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FedEx Express | Tracking & Shipment Verification</title>
+    <title>FedEx Express | Tracking & Shipment Status</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome CDN -->
@@ -21,10 +21,6 @@
                             darkPurple: '#330D5E',
                             lightBg: '#FAFAFA',
                             cardBorder: '#E3E3E3'
-                        },
-                        whatsapp: {
-                            DEFAULT: '#25D366',
-                            hover: '#128C7E'
                         }
                     }
                 }
@@ -87,7 +83,7 @@
             
             <div class="flex flex-col sm:flex-row gap-3">
                 <div class="relative flex-grow">
-                    <input type="text" id="trackingInput" placeholder="Enter Tracking Number (e.g. TRK-7948-2026-9104)" class="w-full px-4 py-4 border-2 border-gray-300 rounded focus:border-fedex-purple focus:outline-none font-mono text-lg font-bold text-gray-800 uppercase tracking-wider">
+                    <input type="text" id="trackingInput" placeholder="Enter Tracking Number" class="w-full px-4 py-4 border-2 border-gray-300 rounded focus:border-fedex-purple focus:outline-none font-mono text-lg font-bold text-gray-800 uppercase tracking-wider">
                     <button id="clearBtn" class="absolute right-3 top-4 text-gray-400 hover:text-gray-600">
                         <i class="fa-solid fa-xmark text-xl"></i>
                     </button>
@@ -96,12 +92,6 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <span>TRACK</span>
                 </button>
-            </div>
-
-            <!-- Quick Demo Helper -->
-            <div id="demoHelper" class="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
-                <span>Demo Code: <strong class="text-fedex-purple cursor-pointer underline" onclick="fillDemoCode()">TRK-7948-2026-9104</strong></span>
-                <span class="text-gray-400">Route: Los Angeles &rarr; Bristol, UK</span>
             </div>
         </div>
 
@@ -131,31 +121,16 @@
                         <span class="bg-fedex-orange text-white text-xs font-black uppercase px-2.5 py-1 rounded tracking-wide flex items-center gap-1.5">
                             <i class="fa-solid fa-box"></i> SHIPMENT CREATED
                         </span>
-                        <span class="text-xs font-bold text-gray-500 uppercase">Origin Station &mdash; Los Angeles, CA</span>
+                        <span id="displayTrackingNo" class="text-xs font-bold text-gray-500 uppercase font-mono"></span>
                     </div>
                     <h1 class="text-2xl sm:text-3xl font-black text-fedex-purple">Shipment Information Sent to FedEx</h1>
-                    <p class="text-sm text-gray-600 mt-1">Electronic shipping information received. Awaiting package drop-off or courier pickup at origin facility.</p>
+                    <p class="text-sm text-gray-600 mt-1">Electronic shipping information received. Package is prepared and awaiting courier pickup at origin facility.</p>
                 </div>
                 <div class="bg-white p-4 rounded-lg border border-purple-200 shadow-sm w-full md:w-auto text-left md:text-right">
                     <div class="text-xs text-gray-500 font-bold uppercase">Estimated Delivery</div>
                     <div class="text-xl sm:text-2xl font-black text-gray-800">Mon, Oct 19, 2026</div>
                     <div class="text-xs text-fedex-purple font-semibold">Standard Express Service</div>
                 </div>
-            </div>
-
-            <!-- URGENT VERIFICATION ALERT BANNER -->
-            <div class="m-6 sm:m-8 p-5 bg-amber-50 border-l-4 border-red-600 rounded-r-lg border border-amber-200 shadow-sm">
-                <div class="flex items-center gap-2 mb-2">
-                    <i class="fa-solid fa-triangle-exclamation text-red-600 text-lg"></i>
-                    <h3 class="text-base font-bold text-red-600 uppercase tracking-wide">Urgent: Package Verification Needed</h3>
-                </div>
-                <p class="text-xs sm:text-sm text-gray-700 leading-relaxed mb-4">
-                    Package verification needed. Kindly message on WhatsApp to verify your package and clear your shipment for immediate release. Failure to complete verification promptly will result in transit holds.
-                </p>
-                <a href="https://wa.me/19383150864?text=Package%20verification%20needed%20kindly%20message%20on%20WhatsApp%20to%20verify%20your%20package" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-hover text-white font-bold text-sm px-6 py-3 rounded-md shadow transition">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>Verify Package on WhatsApp</span>
-                </a>
             </div>
 
             <!-- SHIPMENT DETAILS ROUTE SUMMARY -->
@@ -168,7 +143,7 @@
                         <div class="text-xs font-bold text-gray-400 uppercase tracking-wider">From / Origin</div>
                         <div class="font-bold text-gray-900 text-base">Los Angeles, CA, USA (LAX)</div>
                         <div class="text-xs text-gray-500">FedEx Origin Station</div>
-                        <div class="text-xs text-gray-400 mt-1">Status: Pending Pickup Scan</div>
+                        <div class="text-xs text-gray-400 mt-1">Status: Pending Origin Pickup</div>
                     </div>
                 </div>
 
@@ -199,7 +174,7 @@
                         
                         <!-- Step 1: Label Created (ACTIVE) -->
                         <div class="flex flex-col items-center">
-                            <div class="w-9 h-9 rounded-full bg-fedex-orange text-white flex items-center justify-center text-sm font-bold shadow-lg ring-4 ring-orange-100 animate-bounce">
+                            <div class="w-9 h-9 rounded-full bg-fedex-orange text-white flex items-center justify-center text-sm font-bold shadow-lg ring-4 ring-orange-100 animate-pulse">
                                 <i class="fa-solid fa-file-invoice"></i>
                             </div>
                             <span class="text-xs font-bold text-fedex-orange mt-2">Label Created</span>
@@ -249,8 +224,8 @@
             <!-- ROUTE MAP SECTION -->
             <div class="border-t border-gray-200">
                 <div class="p-4 bg-gray-100 flex justify-between items-center text-xs font-bold text-gray-600 uppercase">
-                    <span><i class="fa-solid fa-location-dot me-1 text-fedex-purple"></i> Origin Station &mdash; Los Angeles, CA</span>
-                    <span class="text-fedex-orange font-bold"><i class="fa-solid fa-clock text-[10px] me-1"></i> Status: Awaiting Courier Pickup</span>
+                    <span><i class="fa-solid fa-location-dot me-1 text-fedex-purple"></i> Origin Facility &mdash; Los Angeles, CA</span>
+                    <span class="text-fedex-orange font-bold"><i class="fa-solid fa-clock text-[10px] me-1"></i> Status: Ready for Carrier Pickup</span>
                 </div>
                 <div id="map"></div>
             </div>
@@ -270,10 +245,10 @@
                         </div>
                         <div class="flex-grow bg-white p-4 rounded-lg border border-gray-200">
                             <div class="flex flex-col sm:flex-row justify-between sm:items-center">
-                                <span class="font-bold text-gray-900 text-sm">Shipment information sent to FedEx</span>
+                                <span class="font-bold text-gray-900 text-sm">Shipment Information Sent to FedEx</span>
                                 <span class="text-xs text-gray-500">Oct 11, 2026 - 09:15 PST</span>
                             </div>
-                            <p class="text-xs text-gray-500 mt-1">LOS ANGELES, CA — Sender has created shipping label and transmitted tracking details to FedEx Express.</p>
+                            <p class="text-xs text-gray-500 mt-1">LOS ANGELES, CA — Sender created shipping label. Tracking details transmitted to FedEx network.</p>
                         </div>
                     </div>
 
@@ -316,7 +291,7 @@
                 </div>
             </div>
             <div class="text-center sm:text-left text-gray-500">
-                &copy; FedEx 1995-2026. All rights reserved. Express shipment route: Los Angeles (USA) to Bristol, United Kingdom (Recipient: Mrs Alison Wicks).
+                &copy; FedEx 1995-2026. All rights reserved. Express shipment destination: Bristol, BS3 5NG, UK.
             </div>
         </div>
     </footer>
@@ -381,16 +356,14 @@
         let mapInitialized = false;
         let map;
 
-        function fillDemoCode() {
-            document.getElementById('trackingInput').value = 'TRK-7948-2026-9104';
-        }
-
         function handleSearch() {
             const input = document.getElementById('trackingInput').value.trim();
             if(!input) {
                 alert('Please enter a valid FedEx tracking number.');
                 return;
             }
+
+            document.getElementById('displayTrackingNo').innerText = `#${input.toUpperCase()}`;
 
             // Hide initial prompt & show loader
             document.getElementById('landingPrompt').classList.add('hidden');
@@ -431,18 +404,18 @@
         });
 
         function initMap() {
-            // Center map on starting origin (Los Angeles)
-            map = L.map('map').setView([33.9425, -118.4081], 5);
+            // Center map on origin location (Los Angeles)
+            map = L.map('map').setView([33.9425, -118.4081], 4);
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 18,
-                attribution: '&copy; OpenStreetMap contributors | FedEx Tracking'
+                attribution: '&copy; OpenStreetMap contributors | FedEx Express'
             }).addTo(map);
 
             const laxAirport = [33.9425, -118.4081]; // Origin
-            const bristolDest = [51.4463, -2.6033];  // Bedminster, Bristol, UK
+            const bristolDest = [51.4463, -2.6033];  // Destination (Bristol, UK)
 
-            // Dashed route line anticipating international transit to Bristol
+            // Dashed route line illustrating planned journey to Bristol
             L.polyline([laxAirport, bristolDest], {
                 color: '#4D148C',
                 weight: 2,
@@ -461,11 +434,11 @@
             });
 
             L.marker(laxAirport, {icon: originIcon}).addTo(map)
-                .bindPopup("<b>LAX Origin Station</b><br>Los Angeles, USA<br><i>Status: Label Created / Awaiting Pickup</i>")
+                .bindPopup("<b>LAX Origin Station</b><br>Los Angeles, USA<br><i>Status: Shipment Information Received</i>")
                 .openPopup();
 
             L.marker(bristolDest, {icon: destIcon}).addTo(map)
-                .bindPopup("<b>Final Destination</b><br>Mrs Alison Wicks<br>11 Willada Close, Bedminster<br>Bristol, BS3 5NG");
+                .bindPopup("<b>Final Destination</b><br>Mrs Alison Wicks<br>11 Willada Close, Bedminster<br>Bristol, BS3 5NG, UK");
         }
 
         // Modal Controls
@@ -481,4 +454,3 @@
     </script>
 </body>
 </html>
-
