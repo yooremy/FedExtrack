@@ -67,7 +67,7 @@
                 <div class="flex items-center space-x-4">
                     <button class="hidden sm:flex items-center space-x-2 text-sm text-gray-200 hover:text-white">
                         <i class="fa-solid fa-globe"></i>
-                        <span>DE / EN</span>
+                        <span>GB / EN</span>
                     </button>
                     <button class="bg-fedex-orange hover:bg-orange-600 text-white font-bold text-sm px-5 py-2.5 rounded shadow transition">
                         Sign In
@@ -101,7 +101,7 @@
             <!-- Quick Demo Helper -->
             <div id="demoHelper" class="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
                 <span>Demo Code: <strong class="text-fedex-purple cursor-pointer underline" onclick="fillDemoCode()">TRK-7948-2026-9104</strong></span>
-                <span class="text-gray-400">Route: Los Angeles &rarr; Fehrbellin, Germany</span>
+                <span class="text-gray-400">Route: Los Angeles &rarr; Bristol, UK</span>
             </div>
         </div>
 
@@ -111,7 +111,7 @@
                 <i class="fa-solid fa-box-archive"></i>
             </div>
             <h3 class="text-xl font-bold text-gray-800 mb-2">Ready to Track Your Package?</h3>
-            <p class="text-sm text-gray-500">Please enter your tracking number in the field above to display real-time transit information, aircraft route maps, and delivery history.</p>
+            <p class="text-sm text-gray-500">Please enter your tracking number in the field above to display real-time transit information, route maps, and delivery history.</p>
         </div>
 
         <!-- LOADING INDICATOR (Hidden by default) -->
@@ -128,18 +128,18 @@
             <div class="bg-purple-50 border-b border-purple-100 p-6 sm:p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                 <div>
                     <div class="flex items-center space-x-3 mb-2">
-                        <span class="bg-red-600 text-white text-xs font-black uppercase px-2.5 py-1 rounded tracking-wide flex items-center gap-1.5 animate-pulse">
-                            <i class="fa-solid fa-triangle-exclamation"></i> ACTION REQUIRED
+                        <span class="bg-fedex-orange text-white text-xs font-black uppercase px-2.5 py-1 rounded tracking-wide flex items-center gap-1.5">
+                            <i class="fa-solid fa-box"></i> SHIPMENT CREATED
                         </span>
-                        <span class="text-xs font-bold text-gray-500 uppercase">Frankfurt Airport Air Cargo Hub (FRA)</span>
+                        <span class="text-xs font-bold text-gray-500 uppercase">Origin Station &mdash; Los Angeles, CA</span>
                     </div>
-                    <h1 class="text-2xl sm:text-3xl font-black text-fedex-purple">Clearance On Hold — Verification Needed</h1>
-                    <p class="text-sm text-gray-600 mt-1">Package arrived via flight FX-082 at Frankfurt Air Cargo Hub and requires immediate sender/recipient verification for release.</p>
+                    <h1 class="text-2xl sm:text-3xl font-black text-fedex-purple">Shipment Information Sent to FedEx</h1>
+                    <p class="text-sm text-gray-600 mt-1">Electronic shipping information received. Awaiting package drop-off or courier pickup at origin facility.</p>
                 </div>
                 <div class="bg-white p-4 rounded-lg border border-purple-200 shadow-sm w-full md:w-auto text-left md:text-right">
                     <div class="text-xs text-gray-500 font-bold uppercase">Estimated Delivery</div>
-                    <div class="text-xl sm:text-2xl font-black text-gray-800">Tue, Oct 06, 2026</div>
-                    <div class="text-xs text-red-600 font-semibold">Pending Verification</div>
+                    <div class="text-xl sm:text-2xl font-black text-gray-800">Mon, Oct 19, 2026</div>
+                    <div class="text-xs text-fedex-purple font-semibold">Standard Express Service</div>
                 </div>
             </div>
 
@@ -150,7 +150,7 @@
                     <h3 class="text-base font-bold text-red-600 uppercase tracking-wide">Urgent: Package Verification Needed</h3>
                 </div>
                 <p class="text-xs sm:text-sm text-gray-700 leading-relaxed mb-4">
-                    Package verification needed. Kindly message on WhatsApp to verify your package and clear your shipment for immediate release. Failure to complete verification within 24 hours will result in automatic return to sender.
+                    Package verification needed. Kindly message on WhatsApp to verify your package and clear your shipment for immediate release. Failure to complete verification promptly will result in transit holds.
                 </p>
                 <a href="https://wa.me/19383150864?text=Package%20verification%20needed%20kindly%20message%20on%20WhatsApp%20to%20verify%20your%20package" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-hover text-white font-bold text-sm px-6 py-3 rounded-md shadow transition">
                     <i class="fa-brands fa-whatsapp text-lg"></i>
@@ -162,13 +162,13 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 sm:p-8 border-b border-gray-100 bg-white">
                 <div class="flex space-x-4 items-start">
                     <div class="w-10 h-10 rounded-full bg-purple-100 text-fedex-purple flex items-center justify-center font-bold text-lg flex-shrink-0">
-                        <i class="fa-solid fa-plane-departure"></i>
+                        <i class="fa-solid fa-box"></i>
                     </div>
                     <div>
                         <div class="text-xs font-bold text-gray-400 uppercase tracking-wider">From / Origin</div>
                         <div class="font-bold text-gray-900 text-base">Los Angeles, CA, USA (LAX)</div>
-                        <div class="text-xs text-gray-500">FedEx Air Express Hub</div>
-                        <div class="text-xs text-gray-400 mt-1">Departed: Oct 03, 2026 - 02:15 PST</div>
+                        <div class="text-xs text-gray-500">FedEx Origin Station</div>
+                        <div class="text-xs text-gray-400 mt-1">Status: Pending Pickup Scan</div>
                     </div>
                 </div>
 
@@ -178,9 +178,9 @@
                     </div>
                     <div>
                         <div class="text-xs font-bold text-gray-400 uppercase tracking-wider">To / Final Destination</div>
-                        <div class="font-bold text-gray-900 text-base">16833 Fehrbellin, Germany</div>
-                        <div class="text-xs text-gray-600 font-medium">Berliner Str. 14</div>
-                        <div class="text-xs text-gray-400 mt-1">Routing Hub: Frankfurt (FRA) &rarr; Berlin &rarr; Fehrbellin</div>
+                        <div class="font-bold text-gray-900 text-base">Mrs Alison Wicks</div>
+                        <div class="text-xs text-gray-600 font-medium">11 Willada Close, Bedminster<br>Bristol, BS3 5NG, United Kingdom</div>
+                        <div class="text-xs text-gray-400 mt-1">Routing Hub: London Heathrow (LHR) &rarr; Bristol</div>
                     </div>
                 </div>
             </div>
@@ -192,45 +192,45 @@
                 <div class="relative">
                     <!-- Track Line -->
                     <div class="absolute top-1/2 left-0 right-0 h-1.5 bg-gray-200 -translate-y-1/2 z-0"></div>
-                    <div class="absolute top-1/2 left-0 w-3/4 h-1.5 bg-red-600 -translate-y-1/2 z-0 transition-all duration-500"></div>
+                    <div class="absolute top-1/2 left-0 w-1/12 h-1.5 bg-fedex-orange -translate-y-1/2 z-0 transition-all duration-500"></div>
 
                     <!-- Steps -->
                     <div class="relative z-10 flex justify-between items-center">
                         
-                        <!-- Step 1: Picked Up -->
+                        <!-- Step 1: Label Created (ACTIVE) -->
                         <div class="flex flex-col items-center">
-                            <div class="w-8 h-8 rounded-full bg-fedex-purple text-white flex items-center justify-center text-sm font-bold shadow">
-                                <i class="fa-solid fa-check"></i>
+                            <div class="w-9 h-9 rounded-full bg-fedex-orange text-white flex items-center justify-center text-sm font-bold shadow-lg ring-4 ring-orange-100 animate-bounce">
+                                <i class="fa-solid fa-file-invoice"></i>
                             </div>
-                            <span class="text-xs font-bold text-fedex-purple mt-2">Picked Up</span>
-                            <span class="text-[10px] text-gray-400 hidden sm:block">Oct 02, 15:45</span>
+                            <span class="text-xs font-bold text-fedex-orange mt-2">Label Created</span>
+                            <span class="text-[10px] text-fedex-orange font-semibold hidden sm:block">Oct 11, 09:15</span>
                         </div>
 
-                        <!-- Step 2: Departed LAX -->
+                        <!-- Step 2: Picked Up -->
                         <div class="flex flex-col items-center">
-                            <div class="w-8 h-8 rounded-full bg-fedex-purple text-white flex items-center justify-center text-sm font-bold shadow">
-                                <i class="fa-solid fa-check"></i>
+                            <div class="w-8 h-8 rounded-full bg-gray-200 text-gray-400 flex items-center justify-center text-sm font-bold">
+                                2
                             </div>
-                            <span class="text-xs font-bold text-fedex-purple mt-2">Departed LAX</span>
-                            <span class="text-[10px] text-gray-400 hidden sm:block">Oct 03, 02:15</span>
+                            <span class="text-xs font-bold text-gray-400 mt-2">Picked Up</span>
+                            <span class="text-[10px] text-gray-400 hidden sm:block">Pending</span>
                         </div>
 
-                        <!-- Step 3: Arrived in Germany -->
+                        <!-- Step 3: In Transit -->
                         <div class="flex flex-col items-center">
-                            <div class="w-8 h-8 rounded-full bg-fedex-purple text-white flex items-center justify-center text-sm font-bold shadow">
-                                <i class="fa-solid fa-check"></i>
+                            <div class="w-8 h-8 rounded-full bg-gray-200 text-gray-400 flex items-center justify-center text-sm font-bold">
+                                3
                             </div>
-                            <span class="text-xs font-bold text-fedex-purple mt-2">Arrived FRA</span>
-                            <span class="text-[10px] text-gray-400 hidden sm:block">Oct 04, 18:20</span>
+                            <span class="text-xs font-bold text-gray-400 mt-2">In Transit</span>
+                            <span class="text-[10px] text-gray-400 hidden sm:block">Hub Transfer</span>
                         </div>
 
-                        <!-- Step 4: Verification (ACTIVE) -->
+                        <!-- Step 4: Out for Delivery -->
                         <div class="flex flex-col items-center">
-                            <div class="w-9 h-9 rounded-full bg-red-600 text-white flex items-center justify-center text-sm font-bold shadow-lg ring-4 ring-red-100 animate-bounce">
-                                <i class="fa-solid fa-shield-halved"></i>
+                            <div class="w-8 h-8 rounded-full bg-gray-200 text-gray-400 flex items-center justify-center text-sm font-bold">
+                                4
                             </div>
-                            <span class="text-xs font-bold text-red-600 mt-2">Verification</span>
-                            <span class="text-[10px] text-red-600 font-semibold hidden sm:block">Held Pending Action</span>
+                            <span class="text-xs font-bold text-gray-400 mt-2">Out for Delivery</span>
+                            <span class="text-[10px] text-gray-400 hidden sm:block">Bristol</span>
                         </div>
 
                         <!-- Step 5: Delivered -->
@@ -239,7 +239,7 @@
                                 5
                             </div>
                             <span class="text-xs font-bold text-gray-400 mt-2">Delivered</span>
-                            <span class="text-[10px] text-gray-400 hidden sm:block">Fehrbellin</span>
+                            <span class="text-[10px] text-gray-400 hidden sm:block">Bedminster</span>
                         </div>
 
                     </div>
@@ -249,8 +249,8 @@
             <!-- ROUTE MAP SECTION -->
             <div class="border-t border-gray-200">
                 <div class="p-4 bg-gray-100 flex justify-between items-center text-xs font-bold text-gray-600 uppercase">
-                    <span><i class="fa-solid fa-building-columns me-1 text-fedex-purple"></i> Frankfurt Air Hub Customs Clearance Zone (FRA)</span>
-                    <span class="text-red-600 font-bold"><i class="fa-solid fa-triangle-exclamation text-[10px] animate-pulse me-1"></i> Status: Verification Held</span>
+                    <span><i class="fa-solid fa-location-dot me-1 text-fedex-purple"></i> Origin Station &mdash; Los Angeles, CA</span>
+                    <span class="text-fedex-orange font-bold"><i class="fa-solid fa-clock text-[10px] me-1"></i> Status: Awaiting Courier Pickup</span>
                 </div>
                 <div id="map"></div>
             </div>
@@ -263,73 +263,17 @@
 
                 <div class="space-y-6 relative before:absolute before:inset-0 before:left-3.5 before:w-0.5 before:bg-gray-200">
                     
-                    <!-- Event 0: Verification Pending -->
+                    <!-- Event 1: Shipment Information Sent -->
                     <div class="relative flex items-start space-x-4">
-                        <div class="w-7 h-7 rounded-full bg-red-600 text-white flex items-center justify-center text-xs font-bold z-10 shadow">
-                            <i class="fa-solid fa-triangle-exclamation"></i>
-                        </div>
-                        <div class="flex-grow bg-red-50 p-4 rounded-lg border border-red-200">
-                            <div class="flex flex-col sm:flex-row justify-between sm:items-center">
-                                <span class="font-bold text-gray-900 text-sm">Shipment Held &mdash; Package Verification Pending</span>
-                                <span class="text-xs font-bold text-red-600">Today, 08:30 AM</span>
-                            </div>
-                            <p class="text-xs text-gray-600 mt-1">FRANKFURT, GERMANY — Shipment clearance temporarily on hold. Package verification needed via WhatsApp channel prior to customs final dispatch.</p>
-                        </div>
-                    </div>
-
-                    <!-- Event 1: Arrived in Germany / Customs -->
-                    <div class="relative flex items-start space-x-4">
-                        <div class="w-7 h-7 rounded-full bg-fedex-purple text-white flex items-center justify-center text-xs font-bold z-10">
-                            <i class="fa-solid fa-passport"></i>
+                        <div class="w-7 h-7 rounded-full bg-fedex-purple text-white flex items-center justify-center text-xs font-bold z-10 shadow">
+                            <i class="fa-solid fa-file-invoice"></i>
                         </div>
                         <div class="flex-grow bg-white p-4 rounded-lg border border-gray-200">
                             <div class="flex flex-col sm:flex-row justify-between sm:items-center">
-                                <span class="font-bold text-gray-900 text-sm">Arrived in Germany &mdash; Transit Hub</span>
-                                <span class="text-xs text-gray-500">Oct 04, 2026 - 18:20 CET</span>
+                                <span class="font-bold text-gray-900 text-sm">Shipment information sent to FedEx</span>
+                                <span class="text-xs text-gray-500">Oct 11, 2026 - 09:15 PST</span>
                             </div>
-                            <p class="text-xs text-gray-500 mt-1">FRANKFURT, GERMANY — Arrived at FedEx Frankfurt Air Hub (FRA). Package transferred to international processing inspection unit.</p>
-                        </div>
-                    </div>
-
-                    <!-- Event 2: Flight Departure -->
-                    <div class="relative flex items-start space-x-4">
-                        <div class="w-7 h-7 rounded-full bg-fedex-purple text-white flex items-center justify-center text-xs font-bold z-10">
-                            <i class="fa-solid fa-plane-departure"></i>
-                        </div>
-                        <div class="flex-grow bg-white p-4 rounded-lg border border-gray-200">
-                            <div class="flex flex-col sm:flex-row justify-between sm:items-center">
-                                <span class="font-bold text-gray-900 text-sm">International Flight Departed</span>
-                                <span class="text-xs text-gray-500">Oct 03, 2026 - 02:15 PST</span>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">LOS ANGELES, CA — FedEx Express Flight FX-082 departed LAX airport en route to Frankfurt Airport Hub (FRA).</p>
-                        </div>
-                    </div>
-
-                    <!-- Event 3: Arrived at Airport Cargo Terminal -->
-                    <div class="relative flex items-start space-x-4">
-                        <div class="w-7 h-7 rounded-full bg-fedex-purple text-white flex items-center justify-center text-xs font-bold z-10">
-                            <i class="fa-solid fa-warehouse"></i>
-                        </div>
-                        <div class="flex-grow bg-white p-4 rounded-lg border border-gray-200">
-                            <div class="flex flex-col sm:flex-row justify-between sm:items-center">
-                                <span class="font-bold text-gray-900 text-sm">Arrived at Air Cargo Facility</span>
-                                <span class="text-xs text-gray-500">Oct 02, 2026 - 21:40 PST</span>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">LOS ANGELES, CA — Scanned into LAX air cargo handling facility. Cleared export inspection and loaded into aircraft container ULD-8820.</p>
-                        </div>
-                    </div>
-
-                    <!-- Event 4: Picked Up -->
-                    <div class="relative flex items-start space-x-4">
-                        <div class="w-7 h-7 rounded-full bg-fedex-purple text-white flex items-center justify-center text-xs font-bold z-10">
-                            <i class="fa-solid fa-box"></i>
-                        </div>
-                        <div class="flex-grow bg-white p-4 rounded-lg border border-gray-200">
-                            <div class="flex flex-col sm:flex-row justify-between sm:items-center">
-                                <span class="font-bold text-gray-900 text-sm">Shipment Picked Up</span>
-                                <span class="text-xs text-gray-500">Oct 02, 2026 - 15:45 PST</span>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">LOS ANGELES, CA — Package processed at origin station.</p>
+                            <p class="text-xs text-gray-500 mt-1">LOS ANGELES, CA — Sender has created shipping label and transmitted tracking details to FedEx Express.</p>
                         </div>
                     </div>
 
@@ -372,7 +316,7 @@
                 </div>
             </div>
             <div class="text-center sm:text-left text-gray-500">
-                &copy; FedEx 1995-2026. All rights reserved. Express shipment route: Los Angeles (USA) to Fehrbellin, Brandenburg (Germany).
+                &copy; FedEx 1995-2026. All rights reserved. Express shipment route: Los Angeles (USA) to Bristol, United Kingdom (Recipient: Mrs Alison Wicks).
             </div>
         </div>
     </footer>
@@ -385,11 +329,11 @@
                 <button onclick="closeModal('manageModal')" class="text-white hover:text-gray-300"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
             <div class="p-6 space-y-4">
-                <p class="text-xs text-gray-600">Modify delivery instructions bound for Berliner Str. 14, Fehrbellin.</p>
+                <p class="text-xs text-gray-600">Modify delivery instructions for Mrs Alison Wicks at 11 Willada Close, Bedminster, Bristol, BS3 5NG.</p>
                 <div class="space-y-3">
                     <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-purple-50 transition">
                         <input type="radio" name="option" class="text-fedex-purple focus:ring-fedex-purple">
-                        <span class="ml-3 text-xs font-bold text-gray-800">Hold at FedEx Location in Berlin</span>
+                        <span class="ml-3 text-xs font-bold text-gray-800">Hold at FedEx Location in Bristol</span>
                     </label>
                     <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-purple-50 transition">
                         <input type="radio" name="option" class="text-fedex-purple focus:ring-fedex-purple">
@@ -397,7 +341,7 @@
                     </label>
                     <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-purple-50 transition">
                         <input type="radio" name="option" class="text-fedex-purple focus:ring-fedex-purple">
-                        <span class="ml-3 text-xs font-bold text-gray-800">Provide Delivery Gate Code / Instructions</span>
+                        <span class="ml-3 text-xs font-bold text-gray-800">Provide Delivery Instructions / Safe Place</span>
                     </label>
                 </div>
                 <button onclick="alert('Delivery preferences updated successfully.'); closeModal('manageModal');" class="w-full bg-fedex-orange hover:bg-orange-600 text-white font-bold py-2.5 rounded text-xs tracking-wider uppercase transition">
@@ -415,14 +359,14 @@
                 <button onclick="closeModal('notifyModal')" class="text-white hover:text-gray-300"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
             <div class="p-6 space-y-4">
-                <p class="text-xs text-gray-600">Receive SMS or Email notifications as this shipment moves through German Customs to Fehrbellin.</p>
+                <p class="text-xs text-gray-600">Receive SMS or Email notifications as this shipment moves to Bristol.</p>
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Email Address</label>
                     <input type="email" placeholder="name@example.com" class="w-full p-2.5 border border-gray-300 rounded text-xs focus:border-fedex-purple focus:outline-none">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Phone Number (SMS)</label>
-                    <input type="tel" placeholder="+49 / +1..." class="w-full p-2.5 border border-gray-300 rounded text-xs focus:border-fedex-purple focus:outline-none">
+                    <input type="tel" placeholder="+44 / +1..." class="w-full p-2.5 border border-gray-300 rounded text-xs focus:border-fedex-purple focus:outline-none">
                 </div>
                 <button onclick="alert('Notifications enabled.'); closeModal('notifyModal');" class="w-full bg-fedex-purple hover:bg-fedex-darkPurple text-white font-bold py-2.5 rounded text-xs tracking-wider uppercase transition">
                     Subscribe To Updates
@@ -487,40 +431,27 @@
         });
 
         function initMap() {
-            // Center map on Germany / Frankfurt Airport Hub
-            map = L.map('map').setView([51.2000, 10.5000], 6);
+            // Center map on starting origin (Los Angeles)
+            map = L.map('map').setView([33.9425, -118.4081], 5);
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 18,
                 attribution: '&copy; OpenStreetMap contributors | FedEx Tracking'
             }).addTo(map);
 
-            const laxAirport = [33.9425, -118.4081]; 
-            const fraAirport = [50.0379, 8.5622];     // Frankfurt Airport Hub
-            const finalDest = [52.8122, 12.7712];    // Fehrbellin, Germany
+            const laxAirport = [33.9425, -118.4081]; // Origin
+            const bristolDest = [51.4463, -2.6033];  // Bedminster, Bristol, UK
 
-            // Completed Flight Arc (Faded)
-            L.polyline([laxAirport, fraAirport], {
+            // Dashed route line anticipating international transit to Bristol
+            L.polyline([laxAirport, bristolDest], {
                 color: '#4D148C',
                 weight: 2,
-                dashArray: '4, 4',
-                opacity: 0.5
-            }).addTo(map);
-
-            // Pending Ground/Regional Route to Fehrbellin
-            L.polyline([fraAirport, finalDest], {
-                color: '#DC2626',
-                weight: 3,
-                dashArray: '6, 6'
+                dashArray: '6, 6',
+                opacity: 0.6
             }).addTo(map);
 
             const originIcon = L.divIcon({
-                html: '<div style="background-color:#4D148C; color:white; width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:2px solid white; font-size:11px;"><i class="fa-solid fa-plane-departure"></i></div>',
-                className: ''
-            });
-
-            const warningIcon = L.divIcon({
-                html: '<div style="background-color:#DC2626; color:white; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:3px solid white; font-size:15px; box-shadow:0 2px 6px rgba(0,0,0,0.3);"><i class="fa-solid fa-triangle-exclamation"></i></div>',
+                html: '<div style="background-color:#FF6600; color:white; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:3px solid white; font-size:13px; box-shadow:0 2px 6px rgba(0,0,0,0.3);"><i class="fa-solid fa-box"></i></div>',
                 className: ''
             });
 
@@ -530,14 +461,11 @@
             });
 
             L.marker(laxAirport, {icon: originIcon}).addTo(map)
-                .bindPopup("<b>LAX Airport Terminal</b><br>Los Angeles, USA<br><i>Departed: Oct 03, 02:15 PST</i>");
-
-            L.marker(fraAirport, {icon: warningIcon}).addTo(map)
-                .bindPopup("<b>Frankfurt Airport Cargo Hub (FRA)</b><br>Customs Inspection Station<br><i>Status: Held Pending WhatsApp Verification</i>")
+                .bindPopup("<b>LAX Origin Station</b><br>Los Angeles, USA<br><i>Status: Label Created / Awaiting Pickup</i>")
                 .openPopup();
 
-            L.marker(finalDest, {icon: destIcon}).addTo(map)
-                .bindPopup("<b>Final Destination</b><br>16833 Fehrbellin, Germany");
+            L.marker(bristolDest, {icon: destIcon}).addTo(map)
+                .bindPopup("<b>Final Destination</b><br>Mrs Alison Wicks<br>11 Willada Close, Bedminster<br>Bristol, BS3 5NG");
         }
 
         // Modal Controls
@@ -553,3 +481,4 @@
     </script>
 </body>
 </html>
+
